@@ -44,7 +44,7 @@ class ManageRequest @Inject()(context: ServerContext,
           val inputVector = inputVectorO.get
           val result = runEval(inputVector, modelP)
           val responseJson = s"""{"status": "ok", "code": 200, "data": {"result": "${result}"}}"""
-          log.info(s"returnSuccess\u241BresponseJson=${responseJson.take(42)}...")
+          log.info(s"returnSuccess\u241BresponseJson=${responseJson.take(100)}...")
           Callback.successful(req.ok(responseJson, HttpHeaders(jsonHeader)))
 
         } else {

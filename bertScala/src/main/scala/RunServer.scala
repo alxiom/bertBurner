@@ -13,15 +13,14 @@ object RunServer {
   implicit val ioSystem: IOSystem = IOSystem()
 
   private val port: Int = System.getProperty("port", "8080").toInt
-  private val modelPath: String = System.getProperty("model_path", "/Users/alexkim/git/bertBurner")
-  private val libraryPath: String = System.getProperty("lib_path", "/Users/alexkim/git/bertBurner")
-//  System.load(s"${libraryPath}/libModel.so")
-  System.load(s"${libraryPath}/libModel.dylib")
+  private val modelPath: String = System.getProperty("model_path")
+  private val libraryPath: String = System.getProperty("lib_path")
+  System.load(libraryPath)
 
   private val injector: Injector = Guice.createInjector()
   private val runEval: RunEval = injector.getInstance(classOf[RunEval])
   private val evalJNI: EvalJNI = injector.getInstance(classOf[EvalJNI])
-  private val modelP: Long = evalJNI.loadModel(s"${modelPath}/scripted_model.pth")
+  private val modelP: Long = evalJNI.loadModel(modelPath)
 
   def main(args: Array[String]): Unit = {
     println(s"serverStart\u241Btimestamp=${System.currentTimeMillis()}\u241BmodelPointer=${modelP}")

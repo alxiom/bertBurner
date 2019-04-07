@@ -3,6 +3,9 @@
 *.dylib
 libtorch
 
+logs
+burner
+
 bertPython/.idea
 
 bertScala/.idea
