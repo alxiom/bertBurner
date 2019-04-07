@@ -1,3 +1,14 @@
 *.pth
+*.so
+*.dylib
+libtorch
 
 bertPython/.idea
+
+bertScala/.idea
+bertScala/logs
+bertScala/project/project
+bertScala/project/target
+bertScala/target
+
+bertCpp/build
