@@ -1,0 +1,29 @@
+FROM ubuntu:16.04
+MAINTAINER completeresidue <hyoungseok.k@gmail.com>
+
+RUN echo "deb http://dl.bintray.com/sbt/debian /" | tee -a /etc/apt/sources.list.d/sbt.list
+RUN apt-get update -y
+RUN apt-get install -y build-essential
+RUN apt-get install -y cmake
+RUN apt-get install -y openjdk-8-jdk
+RUN apt-get install -y --allow-unauthenticated sbt
+RUN apt-get install -y scala
+RUN apt-get install -y wget
+RUN apt-get install -y unzip
+
+RUN git clone https://github.com/hyoungseok/bertBurner.git /home/bertBurner
+
+RUN wget https://download.pytorch.org/libtorch/cpu/libtorch-shared-with-deps-latest.zip -O /home/bertBurner/libtorch.zip
+RUN unzip /home/bertBurner/libtorch.zip -d /home/bertBurner
+RUN rm /home/bertBurner/libtorch.zip
+
+RUN wget https://github.com/intel/mkl-dnn/releases/download/v0.18/mklml_lnx_2019.0.3.20190220.tgz -O /home/bertBurner/mklml.tgz
+RUN tar zxvf /home/bertBurner/mklml.tgz -C /home/bertBurner
+RUN mv /home/bertBurner/mklml_lnx_2019.0.3.20190220/lib/* /home/bertBurner/libtorch/lib/
+RUN rm -rf /home/bertBurner/mklml*
+
+WORKDIR /home/bertBurner
+CMD ./setup_common.sh
+
+ADD bert_model.pth /home/bertBurner/bert_model.pth
+CMD ./run-burner.sh
