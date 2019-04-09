@@ -23,8 +23,6 @@ RUN mv /home/bertBurner/mklml_lnx_2019.0.3.20190220/lib/* /home/bertBurner/libto
 RUN rm -rf /home/bertBurner/mklml*
 
 ADD bert_model.pth /home/bertBurner/bert_model.pth
-
-WORKDIR /home/bertBurner
 RUN /home/bertBurner/setup_common.sh
 
 WORKDIR /home/bertBurner
