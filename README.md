@@ -31,8 +31,9 @@ on Linux
 ./setup_libtorch_ubuntu.sh
 ```
 
-3. run ```setup_common.sh```
+3. set ```CMakelists.txt``` and run ```setup_common.sh```
 ```
+cp ./bertCpp/CMakelists-[YOUR OS].txt ./bertCpp/CMakelists.txt
 ./setup_common.sh
 ```
 after running the script, you may got the followings under the project directory
