@@ -26,7 +26,7 @@ on Mac
 ./setup_libtorch_macos.sh
 ```
 
-on Ubuntu
+on Linux
 ```
 ./setup_libtorch_ubuntu.sh
 ```
