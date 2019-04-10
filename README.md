@@ -42,7 +42,7 @@ after running the script, you may got the followings under the project directory
 
 4. move your JIT compiled BERT Model to project directory
 ```
-mv /your/compiled/BERT/model.pth ./bert_model.pth
+cp /your/compiled/BERT/model.pth ./bert_model.pth
 ```
 
 5. edit ```burner.config``` file with your actual configurations
