@@ -25,4 +25,4 @@ RUN rm -rf /home/bertBurner/mklml*
 WORKDIR /home/bertBurner
 ADD bert_model.pth /home/bertBurner/bert_model.pth
 RUN /home/bertBurner/setup_common.sh
-CMD ./run-burner.sh
+CMD /home/bertBurner/run-burner.sh
