@@ -28,7 +28,7 @@ on Mac
 
 on Linux
 ```
-./setup_libtorch_ubuntu.sh
+./setup_libtorch_linux.sh
 ```
 
 3. set ```CMakelists.txt``` and run ```setup_common.sh```
