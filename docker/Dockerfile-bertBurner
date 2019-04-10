@@ -22,8 +22,10 @@ RUN tar zxvf /home/bertBurner/mklml.tgz -C /home/bertBurner
 RUN mv /home/bertBurner/mklml_lnx_2019.0.3.20190220/lib/* /home/bertBurner/libtorch/lib/
 RUN rm -rf /home/bertBurner/mklml*
 
+WORKDIR /home/bertBurner
+RUN ./setup_common.sh
+
 ADD bert_model.pth /home/bertBurner/bert_model.pth
-RUN /home/bertBurner/setup_common.sh
 
 WORKDIR /home/bertBurner
 CMD ./run_burner.sh
