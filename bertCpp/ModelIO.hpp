@@ -1,1 +1,1 @@
-#define OUTPUT_SIZE 768
+#define OUTPUT_SIZE 756
