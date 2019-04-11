@@ -56,3 +56,14 @@ vi burner.config
 ```
 
 after launching the server, you may got the ```logs``` directory under the project directory
+
+## run docker
+```
+mkdir -p bertBurner/docker
+wget https://raw.githubusercontent.com/hyoungseok/bertBurner/master/docker/Dockerfile-bertBurner -P bertBurner/docker
+
+cd bertBurner
+cp /PATH/TO/YOUR_PTH_FILE.pth bert_model.pth
+docker build -t bert-burner -f docker/Dockerfile-bertBurner .
+docker run -d -p 8080:8080 --name bert-burner --rm -v ${PWD}/logs:/home/bertBurner/logs bert-burner
+```
