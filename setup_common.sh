@@ -6,7 +6,7 @@ cd ${projectPath}/bertCpp
 rm -rf build
 mkdir build
 cd build
-cmake -DCMAKE_PREFIX_PATH=${projectPath}/libtorch ..
+cmake -DCMAKE_PREFIX_PATH=../libtorch ..
 make
 mv libModel.* ${projectPath}
 
