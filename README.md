@@ -3,14 +3,15 @@ serve PyTorch BERT in production with Scala (by JIT compile)
 
 ## requirements
 ### for serving
-+ cmake == 3.13.3
-+ sbt == 1.0.4
-+ scala == 2.12.8
++ cmake >= 3.13.3
++ gcc >= 4.9.2 (recommand 7.X.X)
++ sbt >= 1.0.4
++ scala >= 2.12.4
 + java == 1.8.0
-+ wget == 1.20.1
++ wget >= 1.20.1
 ### for verify in Python
 + python == 3.7.0
-+ torch = 1.0.0
++ torch >= 1.0.0
 
 ## run server
 1. clone repo
