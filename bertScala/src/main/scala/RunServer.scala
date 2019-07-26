@@ -3,6 +3,7 @@
   */
 
 import akka.actor.ActorSystem
+import burner.EvalJNI
 import colossus.core.IOSystem
 import colossus.protocols.http.{HttpServer, Initializer}
 import com.google.inject.{Guice, Injector}
@@ -27,6 +28,10 @@ object RunServer {
 
     HttpServer.start("burner", port){initContext =>
       new Initializer(initContext) {
+
+
+
+
         override def onConnect: RequestHandlerFactory = serverContext => {
           new ManageRequest(serverContext, runEval, modelP)
         }

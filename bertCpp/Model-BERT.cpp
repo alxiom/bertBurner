@@ -40,7 +40,7 @@ namespace pytorch {
     }
 }
 
-JNIEXPORT jlong JNICALL Java_EvalJNI_loadModel
+JNIEXPORT jlong JNICALL Java_burner_EvalJNI_loadModel
   (JNIEnv * env, jobject thisObj, jstring modelName) {
   const char* modelNameString = env -> GetStringUTFChars(modelName, 0);
   pytorch::Eval eval = pytorch::Eval();
@@ -49,7 +49,7 @@ JNIEXPORT jlong JNICALL Java_EvalJNI_loadModel
   return pModel;
 }
 
-JNIEXPORT jfloatArray JNICALL Java_EvalJNI_evaluate
+JNIEXPORT jfloatArray JNICALL Java_burner_EvalJNI_evaluate
   (JNIEnv * env, jobject thisObj, jlong pModel, jlongArray x, jint xSize) {
     jfloatArray result = env -> NewFloatArray(OUTPUT_SIZE);
     jlong* jX = env -> GetLongArrayElements(x, 0);

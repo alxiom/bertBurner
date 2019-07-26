@@ -10,12 +10,11 @@ import colossus.service.Callback
 import colossus.service.GenRequestHandler.PartialHandler
 import org.json4s._
 import org.json4s.native.JsonMethods.parse
-import javax.inject.{Inject, Singleton}
 
-@Singleton
-class ManageRequest @Inject()(context: ServerContext,
-                              runEval: RunEval,
-                              modelP: Long) extends RequestHandler(context) {
+class ManageRequest(context: ServerContext,
+                    runEval: RunEval,
+                    modelP: Long
+                   ) extends RequestHandler(context) {
 
   implicit val formats: DefaultFormats.type = DefaultFormats
 
