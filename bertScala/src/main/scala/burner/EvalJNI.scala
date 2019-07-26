@@ -1,3 +1,5 @@
+package burner
+
 /**
   * Created by alex on 15/01/2019
   */

@@ -2,6 +2,7 @@
   * Created by Alex on 03/02/2019.
   */
 
+import burner.EvalJNI
 import javax.inject.{Inject, Singleton}
 
 @Singleton
