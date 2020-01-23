@@ -12,6 +12,8 @@ serve PyTorch BERT in production with Scala (by JIT compile)
 ### for verify in Python
 + python == 3.7.0
 + torch >= 1.0.0
+### library dependency
++ libtorch == 1.2.0
 
 ## run server
 1. clone repo

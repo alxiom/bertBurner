@@ -18,7 +18,7 @@ namespace pytorch {
         at::Tensor inputVector = torch::from_blob(&x[0], {BATCH_SIZE, xSize}, at::kLong).clone();
         vector<torch::jit::IValue> inputTensor;
         inputTensor.push_back(inputVector);
-        at::Tensor outputTensor = this -> module -> forward(inputTensor).toTensor();
+        at::Tensor outputTensor = this -> module.forward(inputTensor).toTensor();
         vector<float> outputVector(outputTensor.data<float>(), outputTensor.data<float>() + outputTensor.numel());
         return outputVector;
     }
