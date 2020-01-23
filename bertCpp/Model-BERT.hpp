@@ -7,7 +7,7 @@ namespace pytorch {
             Model();
             Model(const char* modelName);
             ~Model();
-            <torch::jit::script::Module module;
+            torch::jit::script::Module module;
             std::vector<float> predict(std::vector<long> x);
     };
 
